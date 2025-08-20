@@ -1,13 +1,9 @@
 variable "location" {
-  default = "eastus"
-}
-
-variable "resource_group_name" {
-  default = "rg-containerapp"
+  default = "eastus2"
 }
 
 variable "acr_name" {
-  default = "acrtfexample"
+  default = "rg-jelseser"
 }
 
 variable "containerapp_name" {
