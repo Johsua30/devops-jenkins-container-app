@@ -8,11 +8,11 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "rg" {
-  name = "rg-containerapp"
+  name = "rg-jelseser"
 }
 
 data "azurerm_container_registry" "acr" {
-  name                = "acrtfexample"
+  name                = "acr-jelseser"
   resource_group_name = data.azurerm_resource_group.rg.name
 }
 

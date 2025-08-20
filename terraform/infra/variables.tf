@@ -3,7 +3,7 @@ variable "location" {
 }
 
 variable "acr_name" {
-  default = "rg-jelseser"
+  default = "acr-jelseser"
 }
 
 variable "containerapp_name" {
