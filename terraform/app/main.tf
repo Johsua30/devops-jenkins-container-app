@@ -18,18 +18,21 @@ data "azurerm_container_registry" "acr" {
   resource_group_name = data.azurerm_resource_group.rg.name
 }
 
+# Creamos el recurso para manejar el acceso
 resource "azurerm_user_assigned_identity" "app_identity" {
   name                = "my-containerapp-identity"
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = data.azurerm_resource_group.rg.location
 }
 
+# Asignamos el rol
 resource "azurerm_role_assignment" "acr_pull" {
   principal_id         = azurerm_user_assigned_identity.app_identity.principal_id
   role_definition_name = "AcrPull"
   scope                = data.azurerm_container_registry.acr.id
 }
 
+# Creamos la app
 resource "azurerm_container_app" "app" {
   name                         = "my-containerapp"
   container_app_environment_id = "/subscriptions/${var.subscription_id}/resourceGroups/${data.azurerm_resource_group.rg.name}/providers/Microsoft.App/managedEnvironments/my-containerapp-env"
@@ -62,11 +65,6 @@ resource "azurerm_container_app" "app" {
   registry {
     server   = data.azurerm_container_registry.acr.login_server
     identity = azurerm_user_assigned_identity.app_identity.id
-  }
-
-  scale {
-    min_replicas = 1
-    max_replicas = 2
   }
 
   depends_on = [azurerm_role_assignment.acr_pull]
