@@ -1,4 +1,4 @@
-# 🚀 Despliegue de Azure Container App con Terraform + Jenkins + ACR
+# Despliegue de Azure Container App con Terraform + Jenkins + ACR
 
 Este repositorio contiene una solución completa para desplegar una Azure Container App utilizando:
 - **Terraform** para la infraestructura
@@ -25,15 +25,12 @@ Este repositorio contiene una solución completa para desplegar una Azure Contai
 │   ├── Dockerfile                 # Imagen basada en Nginx con contenido HTML simple
 │   └── app/
 │       └── index.html
-└── .github/
-    └── workflows/                # (opcional) CI con GitHub Actions si se desea
+
 ```
 
 ---
 
 ## 🔁 Flujo de despliegue con Jenkins
-
-![CI/CD Flow](ci_cd_pipeline_flow.png)
 
 1. **`terraform/infra/`**: Se crea el Resource Group, ACR y entorno de Container App.
 2. **Docker**: Se construye y sube la imagen al ACR.
