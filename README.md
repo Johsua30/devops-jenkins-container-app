@@ -61,7 +61,14 @@ Agregar los siguientes secretos:
 - `azure-client-secret`
 - `azure-tenant-id`
 
-### 2. Ejecutar el pipeline
+### 2. Crear el pipeline en Jenkins
+
+- Seleccionar Nueva tarea.
+- Nombrarla, seleccionar Pipeline y hacer click en Ok.
+- En la pantalla siguiente bajar a Pipeline, en Definition seleccionar Pipeline script from SCM.
+- En SCM seleccionar Git, pegar el link al repositorio de Github en Repository URL y en Branch specifier cambiar master por main.
+
+### 3. Ejecutar el pipeline
 
 Hacer clic en **Build Now** en Jenkins y observar el despliegue paso a paso.
 

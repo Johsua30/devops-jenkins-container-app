@@ -7,10 +7,12 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
+# Immportamos el resource group
 data "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
 }
 
+# Creamos el acr
 resource "azurerm_container_registry" "acr" {
   name                = var.acr_name
   resource_group_name = var.resource_group_name
@@ -19,6 +21,7 @@ resource "azurerm_container_registry" "acr" {
   admin_enabled       = true 
 }
 
+# Creamos un log analytics workspace para almacenar logs
 resource "azurerm_log_analytics_workspace" "log" {
   name                = "${var.containerapp_name}-log"
   location            = var.location
@@ -27,6 +30,7 @@ resource "azurerm_log_analytics_workspace" "log" {
   retention_in_days   = 30
 }
 
+# Creamos el ambiente para la app
 resource "azurerm_container_app_environment" "env" {
   name                       = "${var.containerapp_name}-env"
   location                   = var.location

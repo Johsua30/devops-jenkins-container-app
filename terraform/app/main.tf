@@ -7,10 +7,12 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
+# Importamos el resource group
 data "azurerm_resource_group" "rg" {
   name = "rg-jelseser"
 }
 
+# Importamos el acr
 data "azurerm_container_registry" "acr" {
   name                = "acrjelseser"
   resource_group_name = data.azurerm_resource_group.rg.name
