@@ -46,13 +46,15 @@ Este repositorio contiene una solución completa para desplegar una Azure Contai
 - Jenkins con Docker disponible
 - Credenciales de Azure como secretos en Jenkins
 
+Se utuliza un contenedor con la imagen de Jenkins al que se le instaló al inicio Docker, Terraform y Azure Cli. La misma solución fue presentada por un compañero en la clase.
+
 ---
 
 ## ✅ Pasos para usar
 
 ### 1. Crear credenciales en Jenkins
 
-Agrega los siguientes secretos:
+Agregar los siguientes secretos:
 
 - `azure-subscription-id`
 - `azure-client-id`
@@ -61,7 +63,7 @@ Agrega los siguientes secretos:
 
 ### 2. Ejecutar el pipeline
 
-Haz clic en **Build Now** en Jenkins y observa el despliegue paso a paso.
+Hacer clic en **Build Now** en Jenkins y observar el despliegue paso a paso.
 
 ---
 
@@ -74,7 +76,3 @@ https://<containerapp-name>.<region>.azurecontainerapps.io/
 ```
 
 ---
-
-## 📄 Licencia
-
-MIT
