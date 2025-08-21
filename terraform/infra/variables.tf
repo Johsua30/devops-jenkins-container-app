@@ -7,7 +7,7 @@ variable "resource_group_name" {
 }
 
 variable "acr_name" {
-  default = "acr-jelseser"
+  default = "acrjelseser"
 }
 
 variable "containerapp_name" {
