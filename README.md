@@ -48,6 +48,8 @@ Este repositorio contiene una solución completa para desplegar una Azure Contai
 
 Se utuliza un contenedor con la imagen de Jenkins al que se le instaló al inicio Docker, Terraform y Azure Cli. La misma solución fue presentada por un compañero en la clase.
 
+Link al repositorio con la imagen de Jenkins usada y las instrucciones: https://github.com/Johsua30/jenkins-terraform-docker-azure
+
 ---
 
 ## ✅ Pasos para usar
